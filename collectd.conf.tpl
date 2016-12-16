@@ -48,7 +48,9 @@ LoadPlugin network
 
     <Module "marathon">
         Host "{{ MARATHON_HOST }}" 
-        Port 8080
+        Port "{{ MARATHON_PORT }}"
+	User "{{ MARATHON_USER }}"
+	Pass "{{ MARATHON_PASS }}"
         Verbose false
     </Module>
 </Plugin>
