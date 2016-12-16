@@ -33,6 +33,10 @@ docker run -d -e GRAPHITE_HOST=<graphite host> -e MESOS_MODE=slave \
 * `MESOS_HOST` - mesos host to monitor.
 * `MESOS_PORT` - mesos port number, likely `5050` for master and `5051` for slave.
 * `MESOS_VERSION` - mesos version to enable version-specific metrics.
+* `MARATHON_HOST` - marathon host to monitor.
+* `MARATHON_PORT` - marathon port number.
+* `MARATHON_USER` - marathon user for web interface authentication.
+* `MARATHON_PASS` - marathon password for web interface authentication.
 
 Note that this docker image is very minimal and libc inside does not
 support `search` directive in `/etc/resolv.conf`. You have to supply
