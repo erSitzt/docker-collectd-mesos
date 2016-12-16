@@ -4,6 +4,7 @@ FQDNLookup false
 Interval 10
 Timeout 2
 ReadThreads 5
+WriteThreads 1
 
 {% if GRAPHITE_HOST is defined %}
 LoadPlugin write_graphite
