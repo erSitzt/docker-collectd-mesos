@@ -10,7 +10,7 @@ ADD collectd.conf.tpl /etc/collectd/collectd.conf.tpl
 
 RUN apk-install git && \
     git clone https://github.com/rayrod2030/collectd-mesos.git /usr/share/collectd/plugins/mesos && \
-    git clone https://github.com/klynch/collectd-marathon.git /usr/share/collectd/plugins/marathon && \
+    git clone https://github.com/criteo-forks/collectd-marathon.git /usr/share/collectd/plugins/marathon && \
     apk del git
 
 ADD ./run.sh /run.sh
