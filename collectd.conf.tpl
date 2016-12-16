@@ -36,7 +36,7 @@ LoadPlugin network
 
     Import "mesos-{{ MESOS_MODE }}"
     <Module "mesos-{{ MESOS_MODE }}">
-        Host "{{ HOST }}"
+        Host "{{ MESOS_HOST | default(HOST) }}"
         Port {{ MESOS_PORT }}
         Verbose false
         Version "{{ MESOS_VERSION }}"
