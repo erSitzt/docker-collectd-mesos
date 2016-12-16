@@ -1,4 +1,4 @@
-Hostname "{{ COLLECTD_HOST | default(MESOS_HOST) }}"
+Hostname "{{ COLLECTD_HOST | default(HOST) }}"
 
 FQDNLookup false
 Interval 10
@@ -36,9 +36,19 @@ LoadPlugin network
 
     Import "mesos-{{ MESOS_MODE }}"
     <Module "mesos-{{ MESOS_MODE }}">
-        Host "{{ MESOS_HOST }}"
+        Host "{{ HOST }}"
         Port {{ MESOS_PORT }}
         Verbose false
         Version "{{ MESOS_VERSION }}"
+    </Module>
+
+    ModulePath "/usr/share/collectd/plugins/marathon"
+
+    Import "marathon"
+
+    <Module "marathon">
+        Host "{{ MARATHON_HOST }}" 
+        Port 8080
+        Verbose false
     </Module>
 </Plugin>
